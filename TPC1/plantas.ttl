@@ -1,0 +1,232 @@
+@prefix : <http://www.semanticweb.org/bacelar/ontologies/2024/1/untitled-ontology-4/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/bacelar/ontologies/2024/1/untitled-ontology-4/> .
+
+<http://www.semanticweb.org/bacelar/ontologies/2024/1/untitled-ontology-4> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/bacelar/ontologies/2024/1/untitled-ontology-4/emRua
+:emRua rdf:type owl:ObjectProperty ;
+       rdfs:domain :Planta ;
+       rdfs:range :Rua .
+
+
+###  http://www.semanticweb.org/bacelar/ontologies/2024/1/untitled-ontology-4/estado
+:estado rdf:type owl:ObjectProperty ;
+        rdfs:domain :Planta ;
+        rdfs:range :Estado .
+
+
+###  http://www.semanticweb.org/bacelar/ontologies/2024/1/untitled-ontology-4/temCaldeira
+:temCaldeira rdf:type owl:ObjectProperty ;
+             rdfs:domain :Planta ;
+             rdfs:range :Maybe .
+
+
+###  http://www.semanticweb.org/bacelar/ontologies/2024/1/untitled-ontology-4/temTutor
+:temTutor rdf:type owl:ObjectProperty ;
+          rdfs:domain :Planta ;
+          rdfs:range :Maybe .
+
+
+###  http://www.semanticweb.org/bacelar/ontologies/2024/1/untitled-ontology-4/tipo
+:tipo rdf:type owl:ObjectProperty ;
+      rdfs:domain :Planta ;
+      rdfs:range :Implantação .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/bacelar/ontologies/2024/1/untitled-ontology-4/Código_de_rua
+:Código_de_rua rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Rua ;
+               rdfs:range xsd:long .
+
+
+###  http://www.semanticweb.org/bacelar/ontologies/2024/1/untitled-ontology-4/Data_de_Plantação
+:Data_de_Plantação rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :Planta ;
+                   rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/bacelar/ontologies/2024/1/untitled-ontology-4/Data_de_actualização
+:Data_de_actualização rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :Planta ;
+                      rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/bacelar/ontologies/2024/1/untitled-ontology-4/Espécie
+:Espécie rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Planta ;
+         rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/bacelar/ontologies/2024/1/untitled-ontology-4/Freguesia
+:Freguesia rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Rua ;
+           rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/bacelar/ontologies/2024/1/untitled-ontology-4/Gestor
+:Gestor rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Planta ;
+        rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/bacelar/ontologies/2024/1/untitled-ontology-4/Id
+:Id rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Planta ;
+    rdfs:range xsd:long .
+
+
+###  http://www.semanticweb.org/bacelar/ontologies/2024/1/untitled-ontology-4/Local
+:Local rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Rua ;
+       rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/bacelar/ontologies/2024/1/untitled-ontology-4/Nome_Científico
+:Nome_Científico rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Planta ;
+                 rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/bacelar/ontologies/2024/1/untitled-ontology-4/Número_de_Registo
+:Número_de_Registo rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :Planta ;
+                   rdfs:range xsd:long .
+
+
+###  http://www.semanticweb.org/bacelar/ontologies/2024/1/untitled-ontology-4/Número_de_intervenções
+:Número_de_intervenções rdf:type owl:DatatypeProperty ;
+                        rdfs:domain :Planta ;
+                        rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/bacelar/ontologies/2024/1/untitled-ontology-4/Origem
+:Origem rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Planta ;
+        rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/bacelar/ontologies/2024/1/untitled-ontology-4/Rua
+:Rua rdf:type owl:DatatypeProperty ;
+     rdfs:domain :Rua ;
+     rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/bacelar/ontologies/2024/1/untitled-ontology-4/Estado
+:Estado rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/bacelar/ontologies/2024/1/untitled-ontology-4/Implantação
+:Implantação rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/bacelar/ontologies/2024/1/untitled-ontology-4/Maybe
+:Maybe rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/bacelar/ontologies/2024/1/untitled-ontology-4/Planta
+:Planta rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/bacelar/ontologies/2024/1/untitled-ontology-4/Rua
+:Rua rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+
+###  http://www.semanticweb.org/bacelar/ontologies/2024/1/untitled-ontology-4#20615557
+<http://www.semanticweb.org/bacelar/ontologies/2024/1/untitled-ontology-4#20615557> rdf:type owl:NamedIndividual ,
+                                                                                             :Planta ;
+                                                                                    :emRua <http://www.semanticweb.org/bacelar/ontologies/2024/1/untitled-ontology-4#1685467> ;
+                                                                                    :estado :Adulto ;
+                                                                                    :temCaldeira :Sim ;
+                                                                                    :temTutor :Sim ;
+                                                                                    :tipo :Arruamento ;
+                                                                                    :Data_de_Plantação "" ;
+                                                                                    :Data_de_actualização "23/07/2021 19:50:54" ;
+                                                                                    :Espécie "pinheiro manso" ;
+                                                                                    :Gestor "DGEV" ;
+                                                                                    :Id "20615557"^^xsd:long ;
+                                                                                    :Nome_Científico "Pinus pinea" ;
+                                                                                    :Número_de_Registo "3"^^xsd:long ;
+                                                                                    :Número_de_intervenções "6"^^xsd:int ;
+                                                                                    :Origem "" .
+
+
+###  http://www.semanticweb.org/bacelar/ontologies/2024/1/untitled-ontology-4/Adulto
+:Adulto rdf:type owl:NamedIndividual ,
+                 :Estado .
+
+
+###  http://www.semanticweb.org/bacelar/ontologies/2024/1/untitled-ontology-4/Arruamento
+:Arruamento rdf:type owl:NamedIndividual ,
+                     :Implantação .
+
+
+###  http://www.semanticweb.org/bacelar/ontologies/2024/1/untitled-ontology-4/Espaço_Verde
+:Espaço_Verde rdf:type owl:NamedIndividual ,
+                       :Implantação .
+
+
+###  http://www.semanticweb.org/bacelar/ontologies/2024/1/untitled-ontology-4/Jovem
+:Jovem rdf:type owl:NamedIndividual ,
+                :Estado .
+
+
+###  http://www.semanticweb.org/bacelar/ontologies/2024/1/untitled-ontology-4/NULL
+:NULL rdf:type owl:NamedIndividual ,
+               :Estado ,
+               :Implantação ,
+               :Maybe .
+
+
+###  http://www.semanticweb.org/bacelar/ontologies/2024/1/untitled-ontology-4/Não
+:Não rdf:type owl:NamedIndividual ,
+              :Maybe .
+
+
+###  http://www.semanticweb.org/bacelar/ontologies/2024/1/untitled-ontology-4/Outro
+:Outro rdf:type owl:NamedIndividual ,
+                :Estado ,
+                :Implantação .
+
+
+###  http://www.semanticweb.org/bacelar/ontologies/2024/1/untitled-ontology-4/Rua_Júlio_Dinis
+<http://www.semanticweb.org/bacelar/ontologies/2024/1/untitled-ontology-4#1685467> rdf:type owl:NamedIndividual ,
+                          :Rua ;
+                 :Código_de_rua "1685467"^^xsd:long ;
+                 :Freguesia "Alcabideche" ;
+                 :Local "Zambujeiro" ;
+                 :Rua "Rua Júlio Dinis" .
+
+
+###  http://www.semanticweb.org/bacelar/ontologies/2024/1/untitled-ontology-4/Sim
+:Sim rdf:type owl:NamedIndividual ,
+              :Maybe .
+
+
+###  http://www.semanticweb.org/bacelar/ontologies/2024/1/untitled-ontology-4/Velho
+:Velho rdf:type owl:NamedIndividual ,
+                :Estado .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
