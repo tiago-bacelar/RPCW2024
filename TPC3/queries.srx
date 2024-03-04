@@ -1,0 +1,31 @@
+PREFIX : <http://rpcw.di.uminho.pt/2024/mapa-virtual/>
+
+
+#Quais as cidades de um determinado distrito?
+select ?nome where {
+    ?s :CidadeDistrito "Braga" .
+	?s :CidadeNome ?nome .
+}
+
+
+#Distribuição de cidades por distrito?
+select ?distrito (count(?s) as ?noCidades) where {
+    ?s :CidadeDistrito ?distrito .
+	?s :CidadeNome ?nome .
+} group by ?distrito
+
+
+#Quantas cidades se pode atingir a partir do Porto?
+select distinct ?nome where {
+    ?cidPorto :CidadeDistrito "Porto" .
+    ?cidPorto (^:LigacaoOrigem / :LigacaoDestino)* ?cidade .
+    ?cidade :CidadeNome ?nome .
+}
+
+
+#Quais as cidades com população acima de X?
+select ?cidade where {
+    ?c :CidadePopulacao ?pop .
+    ?c :CidadeNome ?cidade .
+    filter (?pop > 500000)
+}
