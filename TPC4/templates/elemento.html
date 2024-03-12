@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <meta charset="utf-8"/>
+        <title>Tabela Periódica</title>
+        <link rel="icon" href="{{url_for('static',filename='favicon.png')}}">
+        <link rel="stylesheet" href="{{url_for('static',filename='styles/w3.css')}}">
+    </header>
+    <body>
+        <div class="w3-card-4">
+            <header class="w3-container w3-purple">
+                <h1>{{data.query.nome.value}}</h1>
+            </header>
+
+            <div class="w3-container">
+                <table class="w3-table">
+                    <tr>
+                        <td>Atomic Number</td>
+                        <td>{{data.query.num.value}}</td>
+                    </tr>
+                    <tr>
+                        <td>Symbol</td>
+                        <td><a href="/elemento/{{data.query.id}}">{{data.query.sim.value}}</a></td>
+                    </tr>
+                    <tr>
+                        <td>Atomic Mass</td>
+                        <td>{{data.query.mass.value}} u</td>
+                    </tr>
+                    <tr>
+                        <td>Periodic Group</td>
+                        <td><a href="/grupo/{{data.query.group_id}}">{{data.query.group_name.value}}</a></td>
+                    </tr>
+                    <tr>
+                        <td>Period</td>
+                        <td>{{data.query.period.value}}</td>
+                    </tr>
+                    <tr>
+                        <td>Color</td>
+                        <td>{{data.query.color.value}}</td>
+                    </tr>
+                </table>
+
+            <footer class="w3-container w3-purple">
+                <h5>Gerado por RPCW2024 em {{data.date}}</h5>
+            </footer>
+        </div>
+    </body>
+</html>
