@@ -1,0 +1,51 @@
+PREFIX : <http://rpcw.di.uminho.pt/2024/alunos/>
+
+
+#Número total de alunos
+select (count(?s) as ?alunos)where { 
+    ?s a :Aluno
+}
+
+
+#Número de alunos de LCC
+select (count(?s) as ?alunos) where { 
+	?s :AlunoCurso "LCC"
+}
+
+
+#Alunos com nota positiva no exame de época normal
+select ?idAluno ?nome ?curso ?nota where { 
+	?a a :Aluno ;
+       :AlunoId ?idAluno ;
+       :AlunoNome ?nome ;
+       :AlunoCurso ?curso ;
+       :AlunoExame ?nota .
+    filter (?nota >= 10)
+} order by ?nome
+
+
+#Distribuição de alunos por notas do projeto
+select ?nota (count(?a) as ?alunos) where { 
+	?a :AlunoProjeto ?nota
+} group by (?nota)
+order by (?nota)
+
+
+#Total de notas dos tpcs por aluno
+select ?idAluno ?nome ?curso (sum(?nota) as ?total) where { 
+	?a a :Aluno ;
+       :AlunoId ?idAluno ;
+       :AlunoNome ?nome ;
+       :AlunoCurso ?curso ;
+       :AlunoDidTPC ?tpc .
+    ?tpc :TPCNota ?nota
+} group by ?idAluno ?nome ?curso
+order by desc(?total)
+
+
+#Distribuição de alunos por cursos
+select ?curso (count(?a) as ?alunos) where { 
+	?a a :Aluno ;
+       :AlunoCurso ?curso .
+} group by ?curso
+order by ?curso
